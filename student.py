@@ -66,7 +66,7 @@ class GPTAgent:
             elif question.strip():
                 print(f"Question: {question}")
                 print(f"Input with image: {self.with_image}")
-                if self.with_image:
+                if self.image_from_camera:
                     self.save_image_from_camera()
                 answer = self.text_generation(question, self.with_image)
                 print(f"Answer: {answer}")
@@ -119,6 +119,7 @@ class GPTAgent:
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--with_image', action="store_true")
+    parser.add_argument('--image_from_camera', action="store_true")
     parser.add_argument('--api_key', type=str, required=True, default="", help='API_KEY from the terminal command "echo $OPENAI_API_KEY"')
     parser.add_argument('--output', type=str, default="output.mp4")
     parser.add_argument('--image_path', type=str, default="./media/front_right.jpg")
