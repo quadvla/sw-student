@@ -33,6 +33,7 @@ class GPTAgent:
         self, args, base_path=os.path.dirname(os.path.abspath(__file__))
     ):
         self.with_image = args.with_image
+        self.image_from_camera = args.image_from_camera
         self.image_path = args.image_path
         self.stream_address = args.stream_address
         if (self.stream_address == '0'):
